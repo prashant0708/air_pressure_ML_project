@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="/static/style.css"/>
+        <title>Air Pressure</title> 
+    </head>
+    <body>
+        <div class ="container">
+            <h1 >To know the air presure pressure please enter the required parameter</h1>
+        </div>
+        <form method ="post" action="/ml_prediction">
+
+            <label for="frequency">Enter the Frequency</label>
+
+            <input type="frequency" id="num1" name="frequency" required />
+
+            <label for ="Angle_of_attack">Enter the Angle of attack</label>
+
+            <input type="Angle_of_attack" id="num2" name="Angle_of_attack" required />
+
+            <label for ="Chord length">Enter the chord of length</label>
+
+            <input type="Chord length" id="num3" name="Chord length" required />
+
+            <label for ="Free-stream Velocity">Free-stream Velocity</label>
+
+            <input type="Free-stream Velocity" id="num4" name="Free-stream Velocity" required />
+
+            <label for ="Suction Side">Suction Side</label>
+
+            <input type="Suction Side" id="num5" name="Suction Side" required />
+
+            <button type="submit">submit</button>
+
+            <div class ="container-1">
+
+                {% if result %}
+                <p id="result">Air pressure for the given parameter :{{result}}</p>
+                {% endif %}
+             </div>
+            
+        </form>
+
+    </body>
+
+</html>
